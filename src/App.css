@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+body{
+  background-color:rgb(247, 247, 179);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.grid-container {
+  
+  width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ .grid-row {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 50px;
+ 
+}
+/*
+.grid-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}*/
+
+.grid-cell {
+  width: 50px ;
+  height: 50px ;
+  border: 2px dotted #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   background-color:black; 
+  display: relative;
+  position: relative; 
+} 
+
+.grid-cell.active {
+  background-color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.grid-cell.start {
+  background-color: green;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-cell.end {
+  background-color: red;
+}
+
+.draggable {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  display: flex;
+  
+  font-size: 15px;
+  align-items: center; 
+  justify-content: center; 
+  z-index: 2;
+  cursor: grab;
+  background-color: transparent;
+  font-weight: bold;
+  color: #000;
+}
+
+
+
+.grid-cell:hover .draggable {
+  display: block;
 }
